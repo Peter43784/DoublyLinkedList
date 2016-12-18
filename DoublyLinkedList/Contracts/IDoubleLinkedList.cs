@@ -1,8 +1,11 @@
 ﻿namespace DoublyLinkedList.Contracts
 {
-    internal interface IDoubleLinkedList<T>
+    public interface IDoubleLinkedList<T>
     {
         void AddFirst(T value);
         void AddLast(T value);
+        T GetFirst();
+        T GetLast();
+
     }
 }

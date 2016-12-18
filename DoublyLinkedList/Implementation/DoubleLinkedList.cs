@@ -4,18 +4,28 @@ namespace DoublyLinkedList.Implementation
 {
     public class DoubleLinkedList<T> : IDoubleLinkedList<T>
     {
-        public DoubleLinkedListNode<T> First { get; private set; }
+        private DoubleLinkedListNode<T> _first;
 
-        public DoubleLinkedListNode<T> Last { get; set; }
+        private DoubleLinkedListNode<T> _last;
 
         public void AddFirst(T value)
         {
-             First = new DoubleLinkedListNode<T>(value);
+             _first = new DoubleLinkedListNode<T>(value);
         }
 
         public void AddLast(T value)
         {
-            Last = new DoubleLinkedListNode<T>(value);
+            _last = new DoubleLinkedListNode<T>(value);
+        }
+
+        public T GetFirst()
+        {
+           return _first.Value;
+        }
+
+        public T GetLast()
+        {
+            return _last.Value;
         }
     }
 }
