@@ -3,7 +3,7 @@
 namespace DoublyLinkedList.Test
 {
     [TestFixture]
-    internal class DoubleLinkedListTest
+    internal class DoubleLinkedListNodeTest
     {
 
         [TestCase(1)]
@@ -43,6 +43,5 @@ namespace DoublyLinkedList.Test
 
             Assert.AreEqual(node.Next, nextNode);
         }
-
     }
 }
