@@ -9,21 +9,21 @@ namespace DoublyLinkedList.Test
         [TestCase(1)]
         public void DoubleLinkedList_AddFirst_ReturnsCorrectElement(int value)
         {
-            IDoubleLinkedList<T> list = new DoubleLinkedList<T>();
+            var list = new DoubleLinkedList<int>();
 
             list.AddFirst(1);
 
-            Assert.AreEqual(value, list.First);
+            Assert.AreEqual(value, list.First.Value);
         }
 
         [TestCase(1)]
         public void DoubleLinkedList_AddLast_ReturnsCorrectElement(int value)
         {
-            IDoubleLinkedList<T> list = new DoubleLinkedList<T>();
+            var list = new DoubleLinkedList<int>();
 
             list.AddLast(1);
 
-            Assert.AreEqual(value, list.Last);
+            Assert.AreEqual(value, list.Last.Value);
 
         }
 

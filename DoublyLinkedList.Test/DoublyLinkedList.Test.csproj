@@ -52,7 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoubleLinkedList.cs" />
     <Compile Include="DoubleLinkedListNodeTest.cs" />
+    <Compile Include="DoubleLinkedListTest.cs" />
+    <Compile Include="IDoubleLinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
