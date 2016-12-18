@@ -1,10 +1,10 @@
 ﻿namespace DoublyLinkedList
 {
-    public class DoubleLinkedListNode
+    public class DoubleLinkedListNode<T>
     {
-        public int Value { get; private set; }
+        public T Value { get; private set; }
 
-        public DoubleLinkedListNode(int value)
+        public DoubleLinkedListNode(T value)
         {
             Value = value;
         }
