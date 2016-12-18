@@ -1,4 +1,4 @@
-﻿namespace DoublyLinkedList.Test
+﻿namespace DoublyLinkedList.Contracts
 {
     internal interface IDoubleLinkedList<T>
     {

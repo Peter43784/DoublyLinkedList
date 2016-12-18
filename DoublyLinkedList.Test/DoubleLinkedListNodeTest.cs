@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using DoublyLinkedList.Implementation;
+using NUnit.Framework;
 
 namespace DoublyLinkedList.Test
 {

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DoublyLinkedList.Contracts;
 
-namespace DoublyLinkedList.Test
+namespace DoublyLinkedList.Implementation
 {
-    internal class DoubleLinkedList<T> : IDoubleLinkedList<T>
+    public class DoubleLinkedList<T> : IDoubleLinkedList<T>
     {
         public DoubleLinkedListNode<T> First { get; private set; }
 

@@ -1,4 +1,4 @@
-﻿namespace DoublyLinkedList
+﻿namespace DoublyLinkedList.Implementation
 {
     public class DoubleLinkedListNode<T>
     {
