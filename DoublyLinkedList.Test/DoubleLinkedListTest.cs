@@ -12,7 +12,7 @@ namespace DoublyLinkedList.Test
         {
             var node = new DoubleLinkedListNode(number);
 
-            Assert.AreEqual(number, node.value);
+            Assert.AreEqual(number, node.Value);
         }
     }
 }
