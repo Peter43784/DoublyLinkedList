@@ -7,5 +7,6 @@
         T GetFirst();
         T GetLast();
         string DisplayForward();
+        string DisplayBackward();
     }
 }

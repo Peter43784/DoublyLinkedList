@@ -42,6 +42,20 @@ namespace DoublyLinkedList.Implementation
             }
         }
 
+        //TODO: adjust formatting
+        public string DisplayBackward()
+        {
+            StringBuilder result = new StringBuilder();
+            var node = _last;
+            while (node != null)
+            {
+                result.Append(node.Value);
+                node = node.Previous;
+            }
+            return result.ToString();
+        }
+
+        //TODO: adjust formatting
         public string DisplayForward()
         {
             StringBuilder result = new StringBuilder();
