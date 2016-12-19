@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DoublyLinkedList.Contracts;
 using NUnit.Framework;
 using DoublyLinkedList.Implementation;
@@ -62,6 +63,19 @@ namespace DoublyLinkedList.Test
             list.AddLast(1);
 
             Assert.AreEqual(list.GetFirst(), list.GetLast());
+
+        }
+
+        [Test]
+        public void DisplayForward_ShouldDisplayAllElements_StartFromTheFirst()
+        {
+            IDoubleLinkedList<int> list = new DoubleLinkedList<int>();
+
+            list.AddFirst(2);
+            list.AddLast(3);
+            list.AddFirst(1);
+
+            Assert.AreEqual("1 2 3", list.DisplayForward());
 
         }
     }
