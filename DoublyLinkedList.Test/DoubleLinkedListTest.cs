@@ -95,5 +95,26 @@ namespace DoublyLinkedList.Test
             Assert.AreEqual("43210", list.DisplayBackward());
 
         }
+
+        static object[] CountTestElements =
+        {
+            new object[]  { 1,2,3},
+            new object[]  { 1,2},
+            new object[]  { 1}
+        };
+
+        [Test, TestCaseSource(nameof(CountTestElements))]
+        public void Count_ShouldReturnCorrectAmountOfElements(int[] elements)
+        {
+            IDoubleLinkedList<int> list = new DoubleLinkedList<int>();
+
+            foreach (var e in elements)
+            {
+                list.AddLast(e);
+            }
+
+            Assert.AreEqual(elements.Length, list.Count);
+
+        }
     }
 }
