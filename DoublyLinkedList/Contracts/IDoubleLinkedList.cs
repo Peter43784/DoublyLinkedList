@@ -8,5 +8,6 @@
         T GetLast();
         string DisplayForward();
         string DisplayBackward();
+        void DeleteFirst();
     }
 }
