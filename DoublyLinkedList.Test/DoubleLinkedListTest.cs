@@ -33,7 +33,7 @@ namespace DoublyLinkedList.Test
         [Test]
         public void EmptyDoubleLinkedList_GetFirstGetLast_ThrowsExeption()
         {
-            IDoubleLinkedList<int> list = new DoubleLinkedList<int>();
+            var list = new DoubleLinkedList<int>();
 
             Assert.Throws(Is.TypeOf<NullReferenceException>()
                     .And.Message.EqualTo("Collection is empty"),
@@ -43,8 +43,26 @@ namespace DoublyLinkedList.Test
                 () => list.GetLast());
         }
 
+        [Test]
+        public void OneElement_AddFirst_LastShouldBeEqualFirst()
+        {
+            var list = new DoubleLinkedList<int>();
 
+            list.AddFirst(1);
 
+            Assert.AreEqual(list.GetFirst(), list.GetLast());
 
+        }
+
+        [Test]
+        public void OneElement_AddLast_LastShouldBeEqualFirst()
+        {
+            var list = new DoubleLinkedList<int>();
+
+            list.AddLast(1);
+
+            Assert.AreEqual(list.GetFirst(), list.GetLast());
+
+        }
     }
 }
