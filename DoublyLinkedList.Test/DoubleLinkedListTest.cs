@@ -80,5 +80,20 @@ namespace DoublyLinkedList.Test
             Assert.AreEqual("01234", list.DisplayForward());
 
         }
+
+        [Test]
+        public void DisplayForward_ShouldDisplayAllElements_StartFromTheLast()
+        {
+            var list = new DoubleLinkedList<int>();
+
+            list.AddFirst(2);
+            list.AddLast(3);
+            list.AddFirst(1);
+            list.AddLast(4);
+            list.AddFirst(0);
+
+            Assert.AreEqual("43210", list.DisplayBackward());
+
+        }
     }
 }
