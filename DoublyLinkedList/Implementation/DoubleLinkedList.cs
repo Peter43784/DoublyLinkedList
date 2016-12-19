@@ -50,6 +50,11 @@ namespace DoublyLinkedList.Implementation
 
         public void DeleteFirst()
         {
+            if (_first == null)
+            {
+                throw new NullReferenceException("Collection is empty");
+            }
+
             if (_first == _last)
             {
                 _first = _last = null;
@@ -63,6 +68,11 @@ namespace DoublyLinkedList.Implementation
 
         public void DeleteLast()
         {
+            if (_first == null)
+            {
+                throw new NullReferenceException("Collection is empty");
+            }
+
             if (_first == _last)
             {
                 _first = _last = null;
