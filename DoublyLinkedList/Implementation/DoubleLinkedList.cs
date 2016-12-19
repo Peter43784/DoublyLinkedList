@@ -1,4 +1,5 @@
-﻿using DoublyLinkedList.Contracts;
+﻿using System;
+using DoublyLinkedList.Contracts;
 
 namespace DoublyLinkedList.Implementation
 {
@@ -20,11 +21,19 @@ namespace DoublyLinkedList.Implementation
 
         public T GetFirst()
         {
+            if (_first == null)
+            {
+                throw new NullReferenceException("Collection is empty");
+            }
            return _first.Value;
         }
 
         public T GetLast()
         {
+            if (_last == null)
+            {
+                throw new NullReferenceException("Collection is empty");
+            }
             return _last.Value;
         }
     }
