@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DoublyLinkedList.Contracts;
 using NUnit.Framework;
@@ -165,6 +166,30 @@ namespace DoublyLinkedList.Test
             Assert.Throws(Is.TypeOf<NullReferenceException>()
                     .And.Message.EqualTo("Collection is empty"),
                 () => list.DeleteLast());
+        }
+
+        static object[] TestElementsForIteration =
+      {
+            new object[] {new[] {1,2,3}},
+            new object[] {new[] {1,2}},
+            new object[] {new[] {1}},
+        };
+
+        [Test, TestCaseSource(nameof(TestElementsForIteration))]
+        public void IterateThroughtDoubleLinkedList_ReturnsCorrectElements(int[] elements)
+        {
+            var list = new DoubleLinkedList<int>();
+            foreach (var e in elements)
+            {
+                list.AddLast(e);
+            }
+            var result = new List<int>();
+            foreach (var item in list)
+            {
+                result.Add(item);
+            }
+
+            Assert.AreEqual(elements.ToList(), result);
         }
     }
 }
