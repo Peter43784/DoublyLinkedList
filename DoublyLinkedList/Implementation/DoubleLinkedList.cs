@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using DoublyLinkedList.Contracts;
 
@@ -126,6 +128,20 @@ namespace DoublyLinkedList.Implementation
                 throw new NullReferenceException("Collection is empty");
             }
             return _last.Value;
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            var first = _first;
+            while (first != null)
+            {
+                yield return first.Value;
+                first = first.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
