@@ -61,6 +61,19 @@ namespace DoublyLinkedList.Implementation
             Count--;
         }
 
+        public void DeleteLast()
+        {
+            if (_first == _last)
+            {
+                _first = _last = null;
+                Count = 0;
+                return;
+            }
+            _last = _last.Previous;
+            _last.Next = null;
+            Count--;
+        }
+
         //TODO: adjust formatting
         public string DisplayBackward()
         {

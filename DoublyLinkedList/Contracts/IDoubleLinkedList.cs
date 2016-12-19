@@ -9,5 +9,6 @@
         string DisplayForward();
         string DisplayBackward();
         void DeleteFirst();
+        void DeleteLast();
     }
 }
