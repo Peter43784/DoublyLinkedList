@@ -153,5 +153,18 @@ namespace DoublyLinkedList.Test
             Assert.AreEqual(elements.Length - 1, list.Count);
             Assert.AreEqual(result.ToString(), list.DisplayForward());
         }
+
+        [Test]
+        public void EmptyCollection_DeleteFirst_DeleteLast_ShouldThrowException()
+        {
+            var list = new DoubleLinkedList<int>();
+
+            Assert.Throws(Is.TypeOf<NullReferenceException>()
+                    .And.Message.EqualTo("Collection is empty"),
+                () => list.DeleteFirst());
+            Assert.Throws(Is.TypeOf<NullReferenceException>()
+                    .And.Message.EqualTo("Collection is empty"),
+                () => list.DeleteLast());
+        }
     }
 }
