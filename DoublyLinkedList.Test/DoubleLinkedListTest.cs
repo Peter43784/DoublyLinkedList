@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using DoublyLinkedList.Contracts;
 using NUnit.Framework;
 using DoublyLinkedList.Implementation;
@@ -96,15 +97,14 @@ namespace DoublyLinkedList.Test
 
         }
 
-        static object[] CountTestElements =
+        static object[] TestElements =
         {
             new object[] {new[] {1,2,3}},
             new object[] {new[] {1,2}},
             new object[] {new[] {1}},
-            new object[] {new int[0]}
         };
 
-        [Test, TestCaseSource(nameof(CountTestElements))]
+        [Test, TestCaseSource(nameof(TestElements))]
         public void Count_ShouldReturnCorrectAmountOfElements(int[] elements)
         {
            var list = new DoubleLinkedList<int>();
@@ -116,6 +116,24 @@ namespace DoublyLinkedList.Test
 
             Assert.AreEqual(elements.Length, list.Count);
 
+        }
+
+        [Test, TestCaseSource(nameof(TestElements))]
+        public void DeleteFirst_CountSubstractedByOne_DisplayRightElements(int[] elements)
+        {
+            var list = new DoubleLinkedList<int>();
+            var result = new StringBuilder();
+
+            foreach (var e in elements)
+            {
+                list.AddLast(e);
+                result.Append(e);
+            }
+            result.Remove(0, 1);
+            list.DeleteFirst();
+
+            Assert.AreEqual(elements.Length-1, list.Count);
+            Assert.AreEqual(result.ToString(), list.DisplayForward());
         }
     }
 }
