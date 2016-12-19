@@ -10,6 +10,8 @@ namespace DoublyLinkedList.Implementation
 
         private DoubleLinkedListNode<T> _last;
 
+        public int Count { get; private set; }
+
         public void AddFirst(T value)
         {
             if (_first == null)
@@ -23,6 +25,8 @@ namespace DoublyLinkedList.Implementation
                 _first = newNode;
                 _first.Next.Previous = _first;
             }
+
+            Count++;
         }
 
         public void AddLast(T value)
@@ -40,6 +44,8 @@ namespace DoublyLinkedList.Implementation
                 _last.Previous.Next = _last;
 
             }
+
+            Count++;
         }
 
         //TODO: adjust formatting

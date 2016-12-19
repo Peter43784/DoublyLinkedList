@@ -98,15 +98,15 @@ namespace DoublyLinkedList.Test
 
         static object[] CountTestElements =
         {
-            new object[]  { 1,2,3},
-            new object[]  { 1,2},
-            new object[]  { 1}
+            new object[]  {new[] {1,2,3}},
+            new object[]  {new[] {1,2}},
+            new object[]  {new[] {1}}
         };
 
         [Test, TestCaseSource(nameof(CountTestElements))]
         public void Count_ShouldReturnCorrectAmountOfElements(int[] elements)
         {
-            IDoubleLinkedList<int> list = new DoubleLinkedList<int>();
+           var list = new DoubleLinkedList<int>();
 
             foreach (var e in elements)
             {
