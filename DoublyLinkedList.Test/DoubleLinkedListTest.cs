@@ -135,5 +135,23 @@ namespace DoublyLinkedList.Test
             Assert.AreEqual(elements.Length-1, list.Count);
             Assert.AreEqual(result.ToString(), list.DisplayForward());
         }
+
+        [Test, TestCaseSource(nameof(TestElements))]
+        public void DeleteLast_CountSubstractedByOne_DisplayRightElements(int[] elements)
+        {
+            var list = new DoubleLinkedList<int>();
+            var result = new StringBuilder();
+
+            foreach (var e in elements)
+            {
+                list.AddLast(e);
+                result.Append(e);
+            }
+            result.Remove(elements.Length-1, 1);
+            list.DeleteLast();
+
+            Assert.AreEqual(elements.Length - 1, list.Count);
+            Assert.AreEqual(result.ToString(), list.DisplayForward());
+        }
     }
 }
