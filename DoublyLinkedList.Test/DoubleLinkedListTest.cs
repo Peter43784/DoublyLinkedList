@@ -1,4 +1,5 @@
-﻿using DoublyLinkedList.Contracts;
+﻿using System;
+using DoublyLinkedList.Contracts;
 using NUnit.Framework;
 using DoublyLinkedList.Implementation;
 
@@ -28,6 +29,20 @@ namespace DoublyLinkedList.Test
             Assert.AreEqual(value, list.GetLast());
 
         }
+
+        [Test]
+        public void EmptyDoubleLinkedList_GetFirstGetLast_ThrowsExeption()
+        {
+            IDoubleLinkedList<int> list = new DoubleLinkedList<int>();
+
+            Assert.Throws(Is.TypeOf<NullReferenceException>()
+                    .And.Message.EqualTo("Collection is empty"),
+                () => list.GetFirst());
+            Assert.Throws(Is.TypeOf<NullReferenceException>()
+                    .And.Message.EqualTo("Collection is empty"),
+                () => list.GetLast());
+        }
+
 
 
 
