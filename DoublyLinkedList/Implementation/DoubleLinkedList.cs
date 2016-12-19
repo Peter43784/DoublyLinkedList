@@ -11,12 +11,21 @@ namespace DoublyLinkedList.Implementation
 
         public void AddFirst(T value)
         {
-             _first = new DoubleLinkedListNode<T>(value);
+            _first = new DoubleLinkedListNode<T>(value);
+            if (_last == null)
+            {
+                _last = _first;
+            }   
+            
         }
 
         public void AddLast(T value)
         {
             _last = new DoubleLinkedListNode<T>(value);
+            if (_first == null)
+            {
+                _first = _last;
+            }
         }
 
         public T GetFirst()
