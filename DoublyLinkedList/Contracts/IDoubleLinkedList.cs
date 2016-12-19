@@ -6,6 +6,6 @@
         void AddLast(T value);
         T GetFirst();
         T GetLast();
-
+        string DisplayForward();
     }
 }
