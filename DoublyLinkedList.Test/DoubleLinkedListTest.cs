@@ -98,9 +98,10 @@ namespace DoublyLinkedList.Test
 
         static object[] CountTestElements =
         {
-            new object[]  {new[] {1,2,3}},
-            new object[]  {new[] {1,2}},
-            new object[]  {new[] {1}}
+            new object[] {new[] {1,2,3}},
+            new object[] {new[] {1,2}},
+            new object[] {new[] {1}},
+            new object[] {new int[0]}
         };
 
         [Test, TestCaseSource(nameof(CountTestElements))]
